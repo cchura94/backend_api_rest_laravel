@@ -1,0 +1,31 @@
+ ### prueba otro servidor
+
+POST https://lv.blumbit.net/back/public/api/v1/auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "admin@mail.com",
+    "password": "admin54321"
+}
+
+### LOCAL 
+POST http://127.0.0.1:8000/api/v1/auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "juan@mail.com",
+    "password": "juan54321"
+}
+
+### perfil
+GET http://127.0.0.1:8000/api/v1/auth/profile
+Authorization: Bearer 13|q3LgAR5B7AuUBY001fh7eQ0hvLrMfiH16pWdBypG4c681998
+Accept: application/json
+
+### logout
+
+POST http://127.0.0.1:8000/api/v1/auth/logout
+Authorization: Bearer 12|JYQR1V9q3U72APlT61oKImWryUcsXsDHtmuDm4AI7a081c20
+Accept: application/json
