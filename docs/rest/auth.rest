@@ -18,3 +18,24 @@ Accept: application/json
 POST http://127.0.0.1:8000/api/v1/auth/logout
 Authorization: Bearer 12|JYQR1V9q3U72APlT61oKImWryUcsXsDHtmuDm4AI7a081c20
 Accept: application/json
+
+### --------------------------------------
+### Login con servidor (PRUEBAS)
+POST https://backend.blumbit.net/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin@mail.com",
+    "password": "admin54321"
+}
+###
+POST https://backend.blumbit.net/api/usuario
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 20|Mk5jJOSFXh4kzEFTRH3RltykhDCjpDFJHXzoqDtd8a16ed25
+
+{
+    "name": "admin",
+    "email": "admin@mail.com",
+    "password": "admin54321"
+}
