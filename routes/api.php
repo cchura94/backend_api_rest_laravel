@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
@@ -41,14 +43,19 @@ Route::prefix('/v1/auth')->group(function(){
 });
 
 
-// CRUD USUARIOS
-Route::get("usuario", [UsuarioController::class, "funListar"]);
-Route::post("usuario", [UsuarioController::class, "funGuardar"]);
-Route::get("usuario/{id}", [UsuarioController::class, "funMostrar"]);
-Route::put("usuario/{id}", [UsuarioController::class, "funModificar"]);
-Route::delete("usuario/{id}", [UsuarioController::class, "funEliminar"]);
+Route::middleware('auth:sanctum')->group(function(){
+    // CRUD USUARIOS
+    Route::get("usuario", [UsuarioController::class, "funListar"]);
+    Route::post("usuario", [UsuarioController::class, "funGuardar"]);
+    Route::get("usuario/{id}", [UsuarioController::class, "funMostrar"]);
+    Route::put("usuario/{id}", [UsuarioController::class, "funModificar"]);
+    Route::delete("usuario/{id}", [UsuarioController::class, "funEliminar"]);
 
+    Route::apiResource("categoria", CategoriaController::class);
+    Route::apiResource("producto", ProductoController::class);
+
+});
 
 Route::get("no-autorizado", function(){
-    return response()->json(["mensaje" => "Requiere TOKEN de Acceso"]);
+    return response()->json(["mensaje" => "Requiere TOKEN de Acceso"], 401);
 })->name('login');

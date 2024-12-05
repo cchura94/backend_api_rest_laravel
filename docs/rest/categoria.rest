@@ -1,0 +1,33 @@
+### Listar Categorias
+GET http://127.0.0.1:8000/api/categoria
+Authorization: Bearer 16|yMYRvQ9FIMMADYXAznx2laHoIy9F0B6b0UNSM8J36a8bf0bf
+Accept: application/json
+
+### Guardar categoria
+POST http://127.0.0.1:8000/api/categoria
+Authorization: Bearer 16|yMYRvQ9FIMMADYXAznx2laHoIy9F0B6b0UNSM8J36a8bf0bf
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nombre": "Mueble"
+}
+
+### mostrar categoria
+GET http://127.0.0.1:8000/api/categoria/5
+Authorization: Bearer 16|yMYRvQ9FIMMADYXAznx2laHoIy9F0B6b0UNSM8J36a8bf0bf
+
+### modificar
+PUT http://127.0.0.1:8000/api/categoria/5
+Authorization: Bearer 16|yMYRvQ9FIMMADYXAznx2laHoIy9F0B6b0UNSM8J36a8bf0bf
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nombre": "Mueble MODIFICADO"
+}
+
+
+### eliminar
+DELETE http://127.0.0.1:8000/api/categoria/5
+Authorization: Bearer 16|yMYRvQ9FIMMADYXAznx2laHoIy9F0B6b0UNSM8J36a8bf0bf

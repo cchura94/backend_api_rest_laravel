@@ -1,14 +1,3 @@
- ### prueba otro servidor
-
-POST https://lv.blumbit.net/back/public/api/v1/auth/login
-Content-Type: application/json
-Accept: application/json
-
-{
-    "email": "admin@mail.com",
-    "password": "admin54321"
-}
-
 ### LOCAL 
 POST http://127.0.0.1:8000/api/v1/auth/login
 Content-Type: application/json
